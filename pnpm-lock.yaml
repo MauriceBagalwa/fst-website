@@ -11,6 +11,9 @@ dependencies:
   '@vueuse/motion':
     specifier: ^2.0.0
     version: 2.0.0(vue@3.3.4)
+  collect.js:
+    specifier: ^4.36.1
+    version: 4.36.1
   nuxt-icons:
     specifier: ^3.2.1
     version: 3.2.1
@@ -18,7 +21,7 @@ dependencies:
 devDependencies:
   '@nuxt/devtools':
     specifier: latest
-    version: 0.7.6(nuxt@3.6.5)(vite@4.4.8)
+    version: 0.8.0(nuxt@3.6.5)(vite@4.4.8)
   '@nuxtjs/tailwindcss':
     specifier: ^6.8.0
     version: 6.8.0(webpack@5.88.2)
@@ -1009,8 +1012,8 @@ packages:
     resolution: {integrity: sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==}
     dev: true
 
-  /@nuxt/devtools-kit@0.7.6(nuxt@3.6.5)(vite@4.4.8):
-    resolution: {integrity: sha512-2jSQ1rgStZifRHtfsdqmmvq/O5NskLCwg34JPchBRAx9Kv5IadABlBIWz1jLuaGarI/jsEEAmA5EpfxI5z/PJQ==}
+  /@nuxt/devtools-kit@0.8.0(nuxt@3.6.5)(vite@4.4.8):
+    resolution: {integrity: sha512-zHwotLFwmYPFDg0JHyInn0L3i2gZK24JYDfgOzqBuvCD/Q3ytQVyAMrX2Mp4iIrHjwToZBJ0dlyV+UYXCiWwSg==}
     peerDependencies:
       nuxt: ^3.6.5
       vite: '*'
@@ -1025,8 +1028,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/devtools-wizard@0.7.6:
-    resolution: {integrity: sha512-XCznlUTk66ApYJygGc+6FVborAp2F4PAIvY4b6dVSUf1f47Hs3CPe6eEdatarmEqiTmFMInaX4y8z1hDXrFF0Q==}
+  /@nuxt/devtools-wizard@0.8.0:
+    resolution: {integrity: sha512-nxYAB4TQgeaoYY3xBEzrYVpXzXUAwoeCui0vqu1oTeeuKnl62uXFGsY4vXMHQtnibvbQVZzNFVFoXggKM3MBGw==}
     hasBin: true
     dependencies:
       consola: 3.2.3
@@ -1042,15 +1045,15 @@ packages:
       semver: 7.5.4
     dev: true
 
-  /@nuxt/devtools@0.7.6(nuxt@3.6.5)(vite@4.4.8):
-    resolution: {integrity: sha512-2x/eS0KbzTCK4+OozSZTcbjndM2ySy84MltF/suwLP7Wp/ehY8vzRp+yMTksxLjsf0sbiAa4K8WJCzKd8wLXxA==}
+  /@nuxt/devtools@0.8.0(nuxt@3.6.5)(vite@4.4.8):
+    resolution: {integrity: sha512-w48eqZ52NLVB8C0Q1E/eY0xsokMr9diOaxUptO08UYNhyj+MKKBrhIBTePYO7GlxabXOaHM62zi+iN8AT1qXoA==}
     hasBin: true
     peerDependencies:
       nuxt: ^3.6.5
       vite: '*'
     dependencies:
-      '@nuxt/devtools-kit': 0.7.6(nuxt@3.6.5)(vite@4.4.8)
-      '@nuxt/devtools-wizard': 0.7.6
+      '@nuxt/devtools-kit': 0.8.0(nuxt@3.6.5)(vite@4.4.8)
+      '@nuxt/devtools-wizard': 0.8.0
       '@nuxt/kit': 3.6.5
       birpc: 0.2.12
       boxen: 7.1.1
@@ -2533,6 +2536,10 @@ packages:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
     engines: {iojs: '>= 1.0.0', node: '>= 0.12.0'}
     dev: true
+
+  /collect.js@4.36.1:
+    resolution: {integrity: sha512-jd97xWPKgHn6uvK31V6zcyPd40lUJd7gpYxbN2VOVxGWO4tyvS9Li4EpsFjXepGTo2tYcOTC4a8YsbQXMJ4XUw==}
+    dev: false
 
   /color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}

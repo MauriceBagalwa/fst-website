@@ -1,7 +1,9 @@
 <template>
-  <div class="section__about">
-    <img src="/images/_nicon_2.png" />
-    <div class="card">
+  <div class="section__about section__padding">
+    <div class="about__image">
+      <img src="/images/_nicon_2.png" />
+    </div>
+    <div class="card__content">
       <h2 class="about__label">{{ _label_designation }}</h2>
       <p class="about__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores
@@ -11,9 +13,35 @@
       <div class="about__values">
         <p class="values__title">{{ _value_title }}</p>
         <div class="values__card">
-          <div class="card__span"><p>#</p></div>
-          <div class="card__span"><p>#</p></div>
-          <div class="card__span"><p>#</p></div>
+          <div class="card card__one">
+            <Icon name="uil:process" class="__icon" />
+            <p class="content__title">Title valuer one</p>
+
+            <p class="card__description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
+              officiis dolorem, hic harum ab quos.
+            </p>
+          </div>
+
+          <div class="card card__two">
+            <Icon name="uil:telegram-alt" class="__icon" />
+            <p class="content__title">Title two</p>
+
+            <p class="card__description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
+              officiis dolorem.
+            </p>
+          </div>
+
+          <div class="card card__three">
+            <Icon name="uil:presentation-line" class="__icon" />
+            <p class="content__title">La derniere valeur</p>
+
+            <p class="card__description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
+              officiis dolorem, hic harum ab quos.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -22,28 +50,30 @@
 
 <script lang="ts" setup>
 const _label_designation = "Apropos de nous";
-const _value_title = "Nos valeurs";
+const _value_title = "avec comme valeurs";
 </script>
 
-<style lang="scss" setup>
+<style lang="scss" scoped>
 .section__about {
   min-height: 100vh;
   position: relative;
-  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: top;
   align-items: center;
 
-  img {
-    position: absolute;
+  .about__image {
     width: 330px;
-    top: 4%;
+    height: 330px;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   }
 
-  .card {
+  .card__content {
     margin: 0;
-    margin-top: 75%;
     height: 100%;
     width: 100%;
     display: flex;
@@ -66,48 +96,64 @@ const _value_title = "Nos valeurs";
     }
 
     .about__values {
-      width: 100%;
-      height: 80vh;
+      width: 85%;
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: top;
+      align-items: center;
+      padding: 0 1rem;
+
       .values__title {
-        font-weight: 600;
+        font-weight: 700;
       }
 
       .values__card {
         width: 100%;
-        height: 500px;
+        min-height: 550px;
         display: flex;
-        flex-direction: column;
-        justify-content: top;
-        margin-top: 4rem;
-        padding-left: 3rem;
-        gap: 19%;
+        align-items: center;
+        padding: 1rem 1rem;
+        margin-top: 2rem;
+        position: relative;
 
-        .card__span {
-          width: 40px;
-          height: 40px;
-          border-radius: 8px;
-          background: red;
-          font-size: 30px;
-          position: relative;
+        .card {
+          position: absolute;
           display: flex;
           justify-content: center;
-          align-items: center;
-
-          p {
-            font-size: 18px;
-            font-weight: 800;
-            text-align: center;
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          gap: 10px;
+          inline-size: 250px;
+          .__icon {
+            font-size: 40px;
+            color: #e39b55;
           }
 
-          ::before {
-            content: "";
-            position: absolute;
-            width: 3px;
-            height: 100px;
-            background: black;
-            bottom: -6.2rem;
-            left: 1.2rem;
+          .content__title {
+            font-weight: 700;
+            color: #040404;
           }
+
+          .card__description {
+            color: rgb(66, 66, 66);
+            inline-size: 230px;
+          }
+        }
+
+        .card__one {
+          left: 0;
+          top: 0;
+        }
+        .card__two {
+          right: -20px;
+          transform: translateY(0px);
+        }
+
+        .card__three {
+          left: 0;
+          bottom: 0;
         }
       }
     }

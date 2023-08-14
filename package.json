@@ -20,6 +20,7 @@
   "dependencies": {
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@vueuse/motion": "^2.0.0",
+    "collect.js": "^4.36.1",
     "nuxt-icons": "^3.2.1"
   }
 }

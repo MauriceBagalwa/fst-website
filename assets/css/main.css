@@ -16,3 +16,7 @@ body {
 button {
       font-family: 'Montserrat', sans-serif;
 }
+
+.section__padding {
+      margin-bottom: 5rem;
+}
