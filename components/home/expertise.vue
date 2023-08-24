@@ -115,4 +115,16 @@ const _data = [
     gap: 3rem;
   }
 }
+
+@media all and (min-width: 768px) {
+  .section_container {
+    margin-top: 34%;
+  }
+}
+
+@media all and (min-width: 800px) and (max-width: 834px) {
+  .section_container {
+    // margin-top: -10%;
+  }
+}
 </style>

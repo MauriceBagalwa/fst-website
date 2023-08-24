@@ -20,3 +20,10 @@ button {
 .section__padding {
       margin-bottom: 5rem;
 }
+
+@media all and (min-width: 768px) {
+      .__description {
+            font-size: 22px;
+            line-height: 38px;
+      }
+}

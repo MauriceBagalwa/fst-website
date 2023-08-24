@@ -55,16 +55,16 @@ const _value_title = "avec comme valeurs";
 
 <style lang="scss" scoped>
 .section__about {
-  min-height: 100vh;
+  min-height: 85vh;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: top;
   align-items: center;
-
   .about__image {
     width: 330px;
     height: 330px;
+    // background-color: blue;
     img {
       width: 100%;
       height: 100%;
@@ -159,4 +159,62 @@ const _value_title = "avec comme valeurs";
     }
   }
 }
+
+@media all and (min-width: 768px) {
+  .section__about {
+    padding: 0 2rem;
+    position: relative;
+    padding-top: 21%;
+
+    // background: blue;
+    .about__image {
+      // background-color: red;
+      position: absolute;
+      top: 0;
+      width: 330px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .card__content {
+      margin-top: 14%;
+      // background-color: red;
+      .about__description {
+        inline-size: 660px;
+      }
+      .about__values {
+        // background-color: red;
+        gap: 40px;
+        position: relative;
+
+        .values__card {
+          // background-color: aqua;
+          position: absolute;
+          display: inline-flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          .card {
+            position: static;
+          }
+        }
+      }
+
+      // .values__card>*{
+      //   flex: 1 50%;
+      // }
+    }
+  }
+}
+
+// @media all and (min-width: 800px) and (max-width: 834px) {
+//   .section__about {
+//     margin-bottom: -1%;
+//   }
+// }
 </style>

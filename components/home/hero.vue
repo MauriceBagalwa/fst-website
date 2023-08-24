@@ -1,27 +1,25 @@
 <template>
   <div class="section__parent">
-    <!-- <img src="/images/_card.jpg" /> -->
-    <div class="hero">
-      <h1 class="hero__title">
-        Nous trouvons des solutions simples pour des produits complexes.
-      </h1>
+    <h1 class="hero__title">
+      Nous trouvons des solutions simples pour des produits complexes.
+    </h1>
 
-      <p class="hero__description">
-        <!-- Apparence est une agence de développement mobile spécialisée dans Flutter.
-      30+ apps réalisées. -->
-        Find Solution Tech dolor sit amet consectetur adipisicing elit.
-        Voluptates beatae perferendis suscipit libero Lorem des application de
-        la place à Goma.
-      </p>
+    <p class="hero__description">
+      <!-- Apparence est une agence de développement mobile spécialisée dans
+        Flutter. 30+ apps réalisées. -->
+      Find Solution Tech dolor sit amet consectetur adipisicing elit. Voluptates
+      beatae perferendis suscipit libero Lorem des application de la place à
+      Goma.
+    </p>
 
-      <div class="hero__button">
-        <button>
-          Apprendre plus sur nous
-          <div class="btn__icon"></div>
-          <Icon name="uil:arrow-down" class="hbutton__icon" />
-        </button>
-      </div>
+    <div class="hero__button">
+      <button>
+        Apprendre plus sur nous
+        <div class="btn__icon"></div>
+        <Icon name="uil:arrow-down" class="hbutton__icon" />
+      </button>
     </div>
+
     <!-- <HomePartners class="partner" /> -->
   </div>
 </template>
@@ -29,101 +27,145 @@
 <script lang="ts" setup>
 onMounted(() => {});
 </script>
+
 <style lang="scss">
 .section__parent {
   position: relative;
-  height: 72vh;
+  padding: 0 1rem;
+  min-height: 73vh;
   display: flex;
   flex-direction: column;
   justify-content: top;
   align-items: center;
   gap: 2rem;
+  text-align: center;
+  margin-top: 4rem;
 
-  img {
-    position: absolute;
-    width: 100%;
-    height: 65vh;
-    left: 0;
-    right: 0;
-    top: -100px;
-    z-index: 5;
-    opacity: 0.17;
+  .hero__title {
+    text-align: center;
+    position: relative;
+    font-size: 38px;
+    inline-size: 95%;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
   }
 
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: top;
-    padding: 0 1rem;
-    padding-top: 3rem;
-    gap: 3rem;
-    text-align: center;
-    margin: 0;
-    z-index: 10;
+  .hero__title::before {
+    content: "# START-UP";
+    position: absolute;
+    font-size: 11px;
+    margin-top: -30px;
+    background: #e39b55;
+    border-radius: 3px;
+    padding: 4px 20px;
+    color: #ffffff;
+    opacity: 0.9;
+   
+  }
 
-    .hero__title {
-      position: relative;
-      font-size: 38px;
-      line-height: 45px;
-      // font-weight: 700;
-      padding-top: 3rem;
-    }
+  .hero__description {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 24px;
+    inline-size: 85%;
+    color: rgba(0, 0, 0, 0.653);
+  }
 
-    .hero__title::before {
-      content: "# PLATFORM BUSINESS";
-      position: absolute;
-      top: -20px;
-      left: 25%;
-      width: 180px;
-      height: 30px;
-      background: #e39b55;
-      color: #ffffff;
-      font-size: 10px;
-      opacity: 0.8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      border-radius: 2px;
-    }
-
-    .hero__description {
-      font-size: 18px;
-      letter-spacing: 1px;
-      line-height: 25px;
-      // color: rgb(0, 0, 0);
-    }
-
-    .hero__button {
-      // margin-top: 1rem;
+  .hero__button {
+    button {
+      font-size: 16.5px;
       font-weight: 700;
+      background: none;
+      border: none;
       display: flex;
       align-items: center;
       gap: 5px;
-
-      button {
-        font-size: 16px;
-        font-weight: 700;
-        background: none;
-        border: none;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        position: relative;
-      }
-      .hbutton__icon {
-        position: absolute;
-        top: -5px;
-        right: -35px;
-        font-size: 30px;
-        color: rgba(0, 0, 0, 0.984);
-      }
+      //       position: relative;
+      padding: 0 14px;
     }
-
-    .partner {
-      height: 1%;
+    .hbutton__icon {
+      //   position: absolute;
+      //   top: -5px;
+      //   right: -35px;
+      font-size: 30px;
+      color: rgba(0, 0, 0, 0.984);
     }
   }
+
+  .partner {
+    height: 1%;
+  }
+  // }
+}
+
+// @media all and (min-width: 768px) {
+//   .section__parent {
+//     // background-color: red;
+//     height: 65vh;
+//     justify-content: center;
+//     align-items: center;
+//     .hero {
+//       // padding: 0 1rem;
+//       .hero__title {
+//         inline-size: 95%;
+//         font-size: 45px;
+//       }
+//       .hero__description {
+//         font-size: 22px;
+//         line-height: 35px;
+//         inline-size: 90%;
+//       }
+
+//       .hero__title::before {
+//         padding: 0;
+//         width: 290px;
+//         height: 45px;
+//         font-size: 18px;
+//         left: 30%;
+//         right: 30%;
+//         opacity: 0.7;
+//       }
+
+//       .hero__button {
+//         button {
+//           font-size: 22px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+@media all and (min-width: 1024px) {
+  .section__parent {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 15%;
+
+    // margin-bottom: 55px;
+
+    //     .hero {
+    //       display: flex;
+    //       height: 100%;
+    .hero__title {
+      font-size: 3.7rem;
+    }
+    //
+
+    .hero__title::before {
+      width: 150px;
+      height: 5px;
+      padding: 10px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      top: 10px;
+    }
+  }
+  //   }
 }
 </style>

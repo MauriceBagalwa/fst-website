@@ -14,4 +14,10 @@ import { NuxtPage, NuxtWelcome } from ".nuxt/components";
   padding: 0;
   max-width: 1250px;
 }
+
+@media all and (min-width: 1024px) {
+  body {
+    padding: 0 7rem;
+  }
+}
 </style>

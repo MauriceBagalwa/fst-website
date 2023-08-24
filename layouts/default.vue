@@ -9,16 +9,15 @@
       <nuxt-icom name="/layout/logo" />
 
       <ul class="header__menu">
-        <li>Acceuil</li>
-        <li>Qui nous sommes</li>
-        <li>Portofolio</li>
-        <li>Techno & Outils</li>
-        <li>Nos realisation</li>
-        <li>Blog</li>
+        <NuxtLink to="#" class="__menu">Acceuil</NuxtLink>
+        <NuxtLink to="#" class="__menu">Qui nous sommes</NuxtLink>
+        <NuxtLink to="#" class="__menu">Portofolio</NuxtLink>
+        <NuxtLink to="#" class="__menu">Techno & Outils</NuxtLink>
+        <NuxtLink to="#" class="__menu">Blog</NuxtLink>
       </ul>
 
       <div class="header__nav_action">
-        <button>Contact</button>
+        <button>Contactez-nous</button>
       </div>
 
       <div
@@ -62,7 +61,6 @@ header {
 }
 
 nav {
-
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -72,39 +70,6 @@ nav {
     max-width: 200px;
     min-width: 180;
     z-index: 100;
-  }
-
-  .header__nav_action {
-    display: flex;
-    align-items: center;
-
-    button {
-      appearance: button;
-      background-color: #1652f0;
-      border: 1px solid #1652f0;
-      border-radius: 4px;
-      box-sizing: border-box;
-      color: #ffffff;
-      cursor: pointer;
-      font-size: 14px;
-      line-height: 1.15;
-      overflow: visible;
-      padding: 10px 25px;
-      position: relative;
-      text-align: center;
-      text-transform: none;
-      transition: all 80ms ease-in-out;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-      width: fit-content;
-      :disabled {
-        opacity: 0.5;
-      }
-      :focus {
-        outline: 0;
-      }
-    }
   }
 
   .toogle__menu {
@@ -168,6 +133,98 @@ nav {
   .header__menu,
   .header__nav_action {
     display: none;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .background {
+    height: 75%;
+    opacity: 0.12;
+  }
+
+  .header__nav_action {
+    display: flex;
+    align-items: center;
+
+    /* CSS */
+    button {
+      align-items: center;
+      background-color: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 0.25rem;
+      box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+      color: rgba(0, 0, 0, 0.85);
+      cursor: pointer;
+      display: inline-flex;
+      font-size: 14.5px;
+      font-weight: 600;
+      justify-content: center;
+      line-height: 1.25;
+      margin: 0;
+      min-height: 2.6rem;
+      padding: calc(0.6rem - 0.5px) calc(2rem - 1px);
+      position: relative;
+      text-decoration: none;
+      transition: all 250ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: baseline;
+      width: auto;
+    }
+
+    button:hover,
+    button:focus {
+      border-color: rgba(0, 0, 0, 0.15);
+      box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+      color: rgba(0, 0, 0, 0.65);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      background-color: #f0f0f1;
+      border-color: rgba(0, 0, 0, 0.15);
+      box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+      color: rgba(0, 0, 0, 0.65);
+      transform: translateY(0);
+    }
+  }
+}
+
+@media all and (min-width: 1024px) {
+  nav {
+    .toogle__menu {
+      display: none;
+    }
+
+    .header__menu,
+    .header__nav_action {
+      display: flex;
+    }
+
+    .header__menu {
+      display: flex;
+      width: 65%;
+      list-style-type: none;
+      font-size: 14px;
+      font-weight: 700;
+      justify-content: center;
+      align-items: center;
+      gap: 6%;
+
+      .__menu {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.85);
+      }
+
+      .__menu:hover {
+        color: rgba(0, 0, 0, 0.65);
+        // color: red
+      }
+    }
   }
 }
 </style>
