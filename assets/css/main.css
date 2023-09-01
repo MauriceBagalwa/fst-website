@@ -11,6 +11,13 @@ body {
       justify-items: center;
       align-items: center;
       margin: 0;
+      background-color: whitesmoke;
+
+
+}
+
+img {
+      object-fit: contain;
 }
 
 button {

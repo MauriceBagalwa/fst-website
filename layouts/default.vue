@@ -1,5 +1,5 @@
 <template>
-  <img src="/images/_card.jpg" class="background" />
+  <!-- <img src="/images/_card.jpg" class="background" /> -->
   <header>
     <!-- <div> -->
     <nav>
@@ -42,25 +42,22 @@ const toogle_menu = () => {
 </script>
 
 <style lang="scss">
-.background {
-  position: absolute;
-  width: 100%;
-  height: 75%;
-  left: 0;
-  right: 0;
-  top: -106px;
-  z-index: 50;
-  opacity: 0.15;
-}
 header {
   position: relative;
-  // position: sticky;
-  // top: 0;
-  // background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  background-color: whitesmoke;
   z-index: 50;
+  height: 10vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // gap:20%;
 }
 
 nav {
+  width: 100%;
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -138,8 +135,9 @@ nav {
 
 @media all and (min-width: 768px) {
   .background {
-    height: 75%;
-    opacity: 0.12;
+    // height: 75%;
+    width: 100%;
+    // opacity: .2;
   }
 
   .header__nav_action {
@@ -161,8 +159,7 @@ nav {
       justify-content: center;
       line-height: 1.25;
       margin: 0;
-      min-height: 2.6rem;
-      padding: calc(0.6rem - 0.5px) calc(2rem - 1px);
+      padding: calc(0.6rem - 0.5px) calc(1.5rem - 1px);
       position: relative;
       text-decoration: none;
       transition: all 250ms;
@@ -209,7 +206,7 @@ nav {
       display: flex;
       width: 65%;
       list-style-type: none;
-      font-size: 14px;
+      font-size: .9vw;
       font-weight: 700;
       justify-content: center;
       align-items: center;

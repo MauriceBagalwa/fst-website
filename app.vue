@@ -1,6 +1,6 @@
 <template>
   <div class="body__children">
-    <NuxtLayout name="default" />
+    <NuxtLayout />
     <NuxtPage />
   </div>
 </template>
@@ -12,12 +12,12 @@ import { NuxtPage, NuxtWelcome } from ".nuxt/components";
 .body__children {
   margin: 0 auto;
   padding: 0;
-  max-width: 1250px;
+  max-width: 1450px;
 }
 
 @media all and (min-width: 1024px) {
   body {
-    padding: 0 7rem;
+    padding: 0 4rem;
   }
 }
 </style>

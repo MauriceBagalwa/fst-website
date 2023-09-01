@@ -17,14 +17,20 @@ const props = defineProps<{ data: i.IServiceCard }>();
 .card {
   display: flex;
   flex-direction: column;
-  padding: 0 1.2rem;
+  padding: 2rem 1.2rem;
   // align-content: start;
-  gap: 20px;
-  // background-color: blue;
+  // gap: 20px;
+  gap: 8%;
+  // background-color: rgba(255, 255, 255, 0.475);
+  border: 1px solid rgba(18, 18, 18, 0.092);
+  border-radius: 10px;
+
+  // border: 1px solid
+  height: 450px;
 
   .card__title {
     // color:#3498db ;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 700;
   }
   .image__card {

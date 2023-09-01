@@ -1,7 +1,7 @@
 <template>
   <div class="section_container section__padding">
     <div class="container__top">
-      <div class="top_label">{{ _label }}</div>
+      <!-- <div class="top__label">{{ _label }}</div> -->
       <p class="top__title">{{ _title }}</p>
       <p class="top__description">{{ _description }}</p>
     </div>
@@ -76,18 +76,33 @@ const _data = [
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
   // margin-bottom: 3rem;
+
+  // .container__top::before {
+  //   content: "# E X T P E R T I S E";
+  //   position: absolute;
+  //   font-size: 11px;
+  //   margin-top: -60px;
+  //   background: #e39b55;
+  //   border-radius: 3px;
+  //   padding: 8px 20px;
+  //   color: #ffffff;
+  //   opacity: 0.9;
+  //   font-weight: 800;
+  //   margin-left: 42%;
+  // }
 
   .container__top {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 25px;
     text-align: center;
     margin-bottom: 0;
     padding-bottom: 0;
-    min-height: 350px;
+    min-height: 10rem;
 
-    .top_label {
+    .top__label {
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 1.5px;
@@ -103,16 +118,18 @@ const _data = [
       font-size: 20px;
       letter-spacing: 1px;
       line-height: 25px;
+      color: rgba(0, 0, 0, 0.653);
     }
   }
 
   .container__cards {
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     align-content: center;
     min-height: 60vh;
-    gap: 3rem;
+    gap: 5rem;
   }
 }
 
@@ -123,8 +140,51 @@ const _data = [
 }
 
 @media all and (min-width: 800px) and (max-width: 834px) {
+  // .section_container {
+  //   // margin-top: -10%;
+  // }
+}
+
+@media all and (min-width: 1024px) {
+  .section_container::before {
+    content: "# E X T P E R T I S E";
+    position: absolute;
+    font-size: 11px;
+    margin-top: -75px;
+    background: #e39b55;
+    margin-left: 42%;
+    border-radius: 3px;
+    padding: 8px 20px;
+    color: #ffffff;
+    opacity: 0.9;
+    font-weight: 800;
+  }
+
   .section_container {
-    // margin-top: -10%;
+    // background-color: aqua;
+    // margin-top: 0;
+    margin-top: 4%;
+    .container__top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      // background-color: red;
+      height: 4vh;
+      .top__title {
+        font-size: 30px;
+        inline-size: 75%;
+      }
+
+      .top__description {
+        inline-size: 70%;
+      }
+    }
+
+    .container__cards {
+      display: flex;
+      // background-color: red;
+    }
   }
 }
 </style>
