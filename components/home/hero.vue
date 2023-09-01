@@ -13,11 +13,16 @@
     </p>
 
     <div class="hero__button">
-      <button>
+      <NuxtLink class="hero__button" to="#_iabout">
         Apprendre plus sur nous
         <div class="btn__icon"></div>
         <Icon name="uil:arrow-down" class="hbutton__icon" />
-      </button>
+      </NuxtLink>
+      <!-- <button>
+        Apprendre plus sur nous
+        <div class="btn__icon"></div>
+        <Icon name="uil:arrow-down" class="hbutton__icon" />
+      </button> -->
     </div>
 
     <!-- <HomePartners class="partner" /> -->
@@ -73,7 +78,8 @@ onMounted(() => {});
   }
 
   .hero__button {
-    button {
+    .hero__button {
+      text-decoration: none;
       font-size: 16.5px;
       font-weight: 700;
       background: none;
@@ -82,6 +88,7 @@ onMounted(() => {});
       align-items: center;
       gap: 5px;
       //       position: relative;
+      color: black;
       padding: 0 14px;
       cursor: pointer;
     }

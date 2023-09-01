@@ -1,36 +1,31 @@
 <template>
-  <!-- <img src="/images/_card.jpg" class="background" /> -->
   <header>
-    <!-- <div> -->
+    <div class="header__logo">
+      <img src="/logo_fst.png" alt="enterprise logo" />
+    </div>
     <nav>
-      <div class="header__logo">
-        <img src="/logo_fst.png" alt="enterprise logo" />
-      </div>
-      <nuxt-icom name="/layout/logo" />
-
       <ul class="header__menu">
-        <NuxtLink to="#" class="__menu">Acceuil</NuxtLink>
-        <NuxtLink to="#" class="__menu">Qui nous sommes</NuxtLink>
-        <NuxtLink to="#" class="__menu">Portofolio</NuxtLink>
-        <NuxtLink to="#" class="__menu">Techno & Outils</NuxtLink>
-        <NuxtLink to="#" class="__menu">Blog</NuxtLink>
+        <NuxtLink to="/" class="__menu">Acceuil</NuxtLink>
+        <NuxtLink to="/about_us" class="__menu">Qui nous sommes</NuxtLink>
+        <NuxtLink to="/portofolio" class="__menu">Portofolio</NuxtLink>
+        <NuxtLink to="/techno" class="__menu">Techno & Outils</NuxtLink>
+        <NuxtLink to="/blog" class="__menu">Blog</NuxtLink>
       </ul>
-
-      <div class="header__nav_action">
-        <button>Contactez-nous</button>
-      </div>
-
-      <div
-        class="toogle__menu"
-        @click="toogle_menu"
-        :class="{ active: isActive }"
-      >
-        <div class="tg-menu__burger"></div>
-      </div>
     </nav>
-    <slot />
-    <!-- </div> -->
+
+    <div class="header__nav_action">
+      <button>Contactez-nous</button>
+    </div>
+
+    <div
+      class="toogle__menu"
+      @click="toogle_menu"
+      :class="{ active: isActive }"
+    >
+      <div class="tg-menu__burger"></div>
+    </div>
   </header>
+  <slot />
 </template>
 
 <script lang="ts" setup>
@@ -46,27 +41,25 @@ header {
   position: relative;
   position: sticky;
   top: 0;
-  background-color: whitesmoke;
-  z-index: 50;
-  height: 10vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // gap:20%;
-}
-
-nav {
-  width: 100%;
-  z-index: 100;
+  height: 5rem;
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 1rem 1rem 1rem;
+  align-items: center;
+  z-index: 50;
+  padding: 0 0.6rem;
+
+  background-color: whitesmoke;
+  // background-color: red;
   .header__logo img {
     width: 160px;
-    max-width: 200px;
-    min-width: 180;
-    z-index: 100;
+    //   max-width: 200px;
+    //   min-width: 180;
+    //   z-index: 100;
+  }
+
+  .header__nav_action,
+  nav {
+    display: none;
   }
 
   .toogle__menu {
@@ -127,24 +120,18 @@ nav {
     width: 30px;
   }
 
-  .header__menu,
-  .header__nav_action {
-    display: none;
-  }
-}
+  @media all and (min-width: 768px) {
+    //   .background {
+    //     // height: 75%;
+    //     width: 100%;
+    //     // opacity: .2;
+    //   }
 
-@media all and (min-width: 768px) {
-  .background {
-    // height: 75%;
-    width: 100%;
-    // opacity: .2;
-  }
+    //   .header__nav_action {
+    //     display: flex;
+    //     align-items: center;
 
-  .header__nav_action {
-    display: flex;
-    align-items: center;
-
-    /* CSS */
+    //     /* CSS */
     button {
       align-items: center;
       background-color: #ffffff;
@@ -189,37 +176,40 @@ nav {
       transform: translateY(0);
     }
   }
-}
 
-@media all and (min-width: 1024px) {
-  nav {
+  @media all and (min-width: 1024px) {
     .toogle__menu {
       display: none;
     }
 
-    .header__menu,
-    .header__nav_action {
-      display: flex;
+    .header__nav_action,
+    nav {
+      display: block;
     }
-
-    .header__menu {
-      display: flex;
-      width: 65%;
-      list-style-type: none;
-      font-size: .9vw;
-      font-weight: 700;
-      justify-content: center;
-      align-items: center;
-      gap: 6%;
-
-      .__menu {
-        text-decoration: none;
-        color: rgba(0, 0, 0, 0.85);
+    nav {
+      width: 70%;
+      .header__menu,
+      .header__nav_action {
+        display: flex;
       }
 
-      .__menu:hover {
-        color: rgba(0, 0, 0, 0.65);
-        // color: red
+      .header__menu {
+        display: flex;
+        list-style-type: none;
+        font-size: 0.9vw;
+        font-weight: 700;
+        justify-content: center;
+        align-items: center;
+        gap: 6%;
+
+        .__menu {
+          text-decoration: none;
+          color: rgba(0, 0, 0, 0.85);
+        }
+
+        .__menu:hover {
+          color: rgba(0, 0, 0, 0.65);
+        }
       }
     }
   }

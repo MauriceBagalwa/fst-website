@@ -1,9 +1,10 @@
 <template>
-  <div class="section__about section__padding">
-    <div class="about__image">
+  <div class="section__about section__padding"  id="_iabout">
+    <div class="about__image" >
       <img
         src="https://www.notion.so/cdn-cgi/image/format=webp,width=1080,quality=80/front-static/pages/home/home-hero.png"
-      />
+      
+        />
     </div>
     <div class="card__container">
       <div class="container_left">
@@ -19,7 +20,8 @@
           {{ _bt_designation }}
           <!-- <Icon name="uil:arrow-down" class="left__bt__icon" /> -->
         </button>
-        <img src="/images/_smile.png" alt="about_us" class="left_img" />
+        <!-- <img src="/images/_smile.png" alt="about_us" class="left_img" /> -->
+        <img src="/images/_nabout_us.png" alt="about_us" class="left_img_2" />
       </div>
 
       <div class="container__right">
@@ -272,6 +274,16 @@ const _bt_designation = "En savoir plus";
           right: 30%;
           top: 40%;
           transform: rotate(-22deg);
+        }
+
+        .left_img_2{
+          display: block;
+          position: absolute;
+          width: 60%;
+          object-fit: contain;
+          right: 18%;
+          top: 30%;
+          // transform: rotate(-22deg);
         }
       }
 

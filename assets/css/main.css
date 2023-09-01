@@ -1,4 +1,6 @@
-* {
+*,
+::before,
+::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -6,14 +8,16 @@
 
 body {
       font-family: 'Montserrat', sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-items: center;
-      align-items: center;
-      margin: 0;
       background-color: whitesmoke;
+      width: 1450px;
+      margin: 0 auto;
+}
 
-
+.m__description {
+      font-size: 1.25rem;
+      inline-size: 95%;
+      color: #737b7d;
+      line-height: 2rem;
 }
 
 img {
@@ -28,9 +32,9 @@ button {
       margin-bottom: 5rem;
 }
 
-@media all and (min-width: 768px) {
+/* @media all and (min-width: 768px) {
       .__description {
             font-size: 22px;
             line-height: 38px;
       }
-}
+} */
