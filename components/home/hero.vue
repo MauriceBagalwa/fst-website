@@ -5,7 +5,7 @@
     </h1>
 
     <p class="hero__description">
-      <!-- Apparence est une agence de développement mobile spécialisée dans
+      <!-- Find Solution Tech est une agence de développement mobile spécialisée dans
         Flutter. 30+ apps réalisées. -->
       Find Solution Tech dolor sit amet consectetur adipisicing elit. Voluptates
       beatae perferendis suscipit libero Lorem des application de la place à
@@ -32,14 +32,15 @@ onMounted(() => {});
 .section__parent {
   position: relative;
   padding: 0 1rem;
-  min-height: 73vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: top;
   align-items: center;
   gap: 2rem;
   text-align: center;
-  margin-top: 4rem;
+  padding-top: 25%;
+  // margin-bottom: 5%;
 
   .hero__title {
     text-align: center;
@@ -52,7 +53,7 @@ onMounted(() => {});
   }
 
   .hero__title::before {
-    content: "# START-UP";
+    content: "# S T A R T - U P";
     position: absolute;
     font-size: 11px;
     margin-top: -30px;
@@ -61,13 +62,12 @@ onMounted(() => {});
     padding: 4px 20px;
     color: #ffffff;
     opacity: 0.9;
-   
   }
 
   .hero__description {
-    font-size: 20px;
+    font-size: 19px;
     letter-spacing: 1px;
-    line-height: 24px;
+    line-height: 26px;
     inline-size: 85%;
     color: rgba(0, 0, 0, 0.653);
   }
@@ -83,6 +83,7 @@ onMounted(() => {});
       gap: 5px;
       //       position: relative;
       padding: 0 14px;
+      cursor: pointer;
     }
     .hbutton__icon {
       //   position: absolute;
@@ -138,32 +139,36 @@ onMounted(() => {});
 
 @media all and (min-width: 1024px) {
   .section__parent {
-    min-height: 85vh;
+    // background-color: blue;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
     text-align: center;
-    margin-top: 15%;
+    width: auto;
+    margin-bottom: 0;
+    padding-top: 2.5%;
 
-    // margin-bottom: 55px;
+    // background-color: red;
 
-    //     .hero {
-    //       display: flex;
-    //       height: 100%;
     .hero__title {
       font-size: 3.7rem;
+      inline-size: 80%;
     }
-    //
 
     .hero__title::before {
-      width: 150px;
-      height: 5px;
-      padding: 10px 8px;
-      font-size: 11px;
-      font-weight: 700;
-      top: 10px;
+      // width: 150px;
+      // height: 5px;
+      // padding: 10px 8px;
+      // font-size: 11px;
+      // font-weight: 700;
+      // top: 10px;
+    }
+
+    .hero__description {
+      inline-size: 65%;
     }
   }
   //   }

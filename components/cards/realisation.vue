@@ -1,12 +1,14 @@
 <template>
   <div class="card__container">
-    <p class="card__title">{{ props.data.title }}</p>
-    <p class="card__description">
-      {{ props.data.description }}
-    </p>
-    <div class="genres">
-      <div v-for="str in props.data.genres">
-        <p class="card__genre">#{{ str }}</p>
+    <div class="card__body">
+      <p class="card__title">{{ props.data.title }}</p>
+      <p class="card__description">
+        {{ props.data.description }}
+      </p>
+      <div class="genres">
+        <div v-for="str in props.data.genres">
+          <p class="card__genre">#{{ str }}</p>
+        </div>
       </div>
     </div>
     <div class="card__img">
@@ -23,8 +25,8 @@ const props = defineProps<{ data: i.IRealisationCard }>();
 <style lang="scss" scoped>
 .card__container {
   width: 100%;
-  min-height: 540px;
-  background-color: #e09a3d8e;
+  min-height: 450px;
+  // background-color: #e09a3d8e;
   background-color: v-bind("props.data.bg_color");
   display: flex;
   flex-direction: column;
@@ -61,6 +63,10 @@ const props = defineProps<{ data: i.IRealisationCard }>();
       height: 290px;
       object-fit: contain;
     }
+  }
+
+  @media all and (min-width: 1024px) {
+    flex-direction: row;
   }
 }
 </style>
