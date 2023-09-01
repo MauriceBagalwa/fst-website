@@ -5,8 +5,10 @@
     <HomeAbout />
     <HomeExpertise />
     <HomeRealisation :data="{ show_title: true }" />
-    <HomeComment />
+    <HomeWhyUs />
     <HomeCustomer />
+    <!-- <HomeComment /> -->
+
     <HomeTechnology />
     <CardsContact />
   </div>

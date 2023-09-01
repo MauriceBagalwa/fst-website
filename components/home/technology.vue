@@ -1,8 +1,7 @@
 <template>
   <div class="section_container section__padding">
-    <p class="container__label">{{ _label }}</p>
     <p class="container__title">{{ _title }}</p>
-    <p class="container__descrption">{{ _description }}</p>
+    <p class="container__description">{{ _description }}</p>
 
     <div class="container__type">
       <!-- <button class="card__type" @click="filter_data()">#Tous</button> -->
@@ -170,7 +169,8 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .section_container {
-  min-height: 100vh;
+  // background-color: red;
+  min-height: 50vh;
   position: relative;
   padding: 0 1rem;
   display: flex;
@@ -187,7 +187,7 @@ onMounted(() => {
 
   .container__type {
     position: relative;
-    background-color: #fff;
+    background-color: transparent;
     width: 100%;
     min-height: 40px;
     padding: 0 0.2rem;
@@ -214,7 +214,7 @@ onMounted(() => {
     position: absolute;
     bottom: 0px;
     width: 60%;
-    height: 2px;
+    height: 1.5px;
     border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.258);
     transform: translateY(25px);
@@ -250,6 +250,38 @@ onMounted(() => {
         font-weight: 600;
       }
     }
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .section_container {
+    margin-top: 12%;
+
+    .container__title {
+      font-weight: 800;
+      font-size: 30px;
+    }
+    .container__description {
+      font-size: 1.25rem;
+      color: #737b7d;
+      line-height: 2rem;
+      inline-size: 65%;
+    }
+  }
+
+  .section_container::before {
+    content: "# T E C H N O  &  O U T I L S";
+    position: absolute;
+    font-size: 11px;
+    margin-top: -75px;
+    // left:44%;
+    background: #e39b55;
+
+    border-radius: 3px;
+    padding: 8px 20px;
+    color: #ffffff;
+    opacity: 0.9;
+    font-weight: 800;
   }
 }
 </style>

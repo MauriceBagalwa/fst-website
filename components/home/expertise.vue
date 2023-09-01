@@ -118,6 +118,7 @@ const _data = [
       font-size: 20px;
       letter-spacing: 1px;
       line-height: 25px;
+      color: rgba(0, 0, 0, 0.653);
     }
   }
 

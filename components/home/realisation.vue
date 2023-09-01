@@ -47,7 +47,6 @@ const _data: i.IRealisationCard[] = [
     bg_color: "#2fcfb2",
   },
 ];
-
 </script>
 
 <style lang="scss" scoped>
@@ -60,7 +59,8 @@ const _data: i.IRealisationCard[] = [
   padding: 0 1rem;
 
   .container__title {
-    font-size: 26px;
+    font-size: 30px;
+    // inline-size: 75%;
     font-weight: 800;
     padding: 0 2px;
   }
@@ -75,17 +75,16 @@ const _data: i.IRealisationCard[] = [
   }
 
   button {
-    color: #000;
-    text-transform: none;
-    background-color: rgba(0, 0, 0, 0);
-    border: 2px solid #8c868175;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.75rem;
+    padding: 15px 25px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    background-color: #090909e0;
+    color: #fffffff0;
+    border-radius: 4px;
+    cursor: pointer;
 
-    .bt__icon{
+    .bt__icon {
       font-size: 19px;
     }
   }

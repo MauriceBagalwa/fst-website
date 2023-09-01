@@ -64,9 +64,56 @@ const props = defineProps<{ data: i.IRealisationCard }>();
       object-fit: contain;
     }
   }
+}
 
-  @media all and (min-width: 1024px) {
+@media all and (min-width: 1024px) {
+  .card__container {
     flex-direction: row;
+    padding: 5rem 7rem;
+    .card__body {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .card__title {
+        font-size: 45px;
+      }
+
+      .card__description {
+        inline-size: 70%;
+        font-size: 18px;
+      }
+
+      .genres {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 400px;
+
+        .card__genre {
+          padding: 4px 15px;
+          border-radius: 4px;
+          color: #fff;
+          background-color: #ffffff26;
+          font-size: 11px;
+          font-weight: 700;
+          text-align: center;
+
+          font-size: 15.5px;
+        }
+      }
+    }
+
+    .card__img {
+      // position: relative;
+      width: 40%;
+      img {
+        width: 100%;
+        height: 100%;
+        // height: 290px;
+        object-fit: contain;
+      }
+    }
   }
 }
 </style>
