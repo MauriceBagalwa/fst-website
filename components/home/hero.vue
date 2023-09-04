@@ -15,14 +15,8 @@
     <div class="hero__button">
       <NuxtLink class="hero__button" to="#_iabout">
         Apprendre plus sur nous
-        <div class="btn__icon"></div>
         <Icon name="uil:arrow-down" class="hbutton__icon" />
       </NuxtLink>
-      <!-- <button>
-        Apprendre plus sur nous
-        <div class="btn__icon"></div>
-        <Icon name="uil:arrow-down" class="hbutton__icon" />
-      </button> -->
     </div>
 
     <!-- <HomePartners class="partner" /> -->
