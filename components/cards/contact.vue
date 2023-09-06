@@ -17,7 +17,7 @@ const _description =
 
 <style lang="scss" scoped>
 .section_container {
-  height: 50vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;

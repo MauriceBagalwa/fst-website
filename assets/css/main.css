@@ -6,11 +6,31 @@
       box-sizing: border-box;
 }
 
+:root {
+      --label-bc: #e39c5596;
+      --bc-card: #00000006;
+      --size-section-title: 2rem;
+}
+
 body {
       font-family: 'Montserrat', sans-serif;
       background-color: whitesmoke;
-      width: 1450px;
+      width: 1200px;
       margin: 0 auto;
+      position: relative;
+}
+
+
+.m__title {
+
+      text-align: center;
+      position: relative;
+      font-size: 38px;
+      inline-size: 95%;
+      display: flex;
+      justify-content: center;
+      /* // align-items: center; */
+
 }
 
 .m__description {

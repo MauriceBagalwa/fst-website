@@ -68,6 +68,9 @@ const props = defineProps<{ data: i.IRealisationCard }>();
 
 @media all and (min-width: 1024px) {
   .card__container {
+    // transform: scale(0,75);
+    transition: all 0.7s;
+
     flex-direction: row;
     padding: 5rem 7rem;
     .card__body {
@@ -75,6 +78,7 @@ const props = defineProps<{ data: i.IRealisationCard }>();
       display: flex;
       flex-direction: column;
       gap: 20px;
+      color: #ffffff;
       .card__title {
         font-size: 45px;
       }
@@ -114,6 +118,13 @@ const props = defineProps<{ data: i.IRealisationCard }>();
         object-fit: contain;
       }
     }
+  }
+
+  .card__container:hover {
+    // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    // box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    cursor: pointer;
+    box-shadow: rgba(120, 116, 116, 0.494) 0px 10px 50px;
   }
 }
 </style>

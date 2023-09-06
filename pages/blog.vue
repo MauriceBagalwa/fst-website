@@ -4,7 +4,7 @@
       <div class="top__left">
         <h2 class="top__title">{{ _title }}</h2>
         <p class="top__description m__description">{{ _description }}</p>
-        <NuxtLink class="style__button top__bt" to="#_iabout">
+        <NuxtLink class="style__button top__bt" to="#_iblogs">
           Decouvrir nos articles
           <Icon name="uil:arrow-down" class="bt__icon" />
         </NuxtLink>
@@ -59,21 +59,56 @@
         </div>
       </div>
     </div>
-
+    <div id="_iblogs"></div>
     <div class="container__botton">
       <div class="cb__left">
-        <p class="left__title">Filtres</p>
-        <div class="card__label"></div>
+        <div class="cb__body">
+          <p class="cb__title">
+            Filtres <Icon name="uil:filter" class="bt__icon" />
+          </p>
+          <div class="card__label">
+            <p class="lang__label" @click="get_blogs()">Tout</p>
+            <div v-for="str in _blog_lang">
+              <p @click="get_blogs(str)" class="lang__label">
+                {{ str }}
+              </p>
+            </div>
+          </div>
+
+          <div class="cb__proposal">
+            <p class="proposal__title">
+              Vous ne trouvez pas ce que vous chercher ?
+            </p>
+            <p class="proposal__description">
+              Laisse une demande dans notre boite à sugession pour avoir un
+              article sur votre problem.
+            </p>
+            <NuxtLink class="style__button proposal__bt" to="#_iabout">
+              Decouvrez nos articles
+              <Icon name="uil:arrow-down" class="bt__icon" />
+            </NuxtLink>
+          </div>
+        </div>
       </div>
       <div class="cb__right">
-        <p class="left__right">Blog populaire de(''): {{ __cat }}</p>
-        <div class="card__blog"></div>
+        <p class="cb__title">
+          Blog populaire de (')
+          <span class="cb__designation">" {{ _filter_designation }} "</span>
+        </p>
+        <div class="card__blog">
+          <div v-for="blog in _blogs" class="__card">
+            <CardsBlog :data="blog" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import collect from "collect.js";
+import i from "interface";
+
 const _title = "Le blog spécialisé dans les applications mobiles & web";
 const _description =
   " Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni reiciendis omnis earum quis autem suscipit numquam, veniam sapiente architecto id fuga magnam vitae in?";
@@ -85,8 +120,188 @@ const _images = [
   "/images/_adonis.png",
 ];
 
-const _blogs_length = 37;
-const __cat = "Nuxtjs";
+const _data = [
+  {
+    designation: "Props in vuejs 3",
+    tag: "conseil",
+    image_url:
+      "https://th.bing.com/th/id/R.ee66e6cbd30f52391f19e323cb3ccedf?rik=bXpZ21CMyopiIA&pid=ImgRaw&r=0",
+    lang: "vuejs",
+    link: "",
+    author: {
+      name: "Jean luc",
+      avatar:
+        "https://upperz-files.s3.af-south-1.amazonaws.com/images/tuBfGWDONL1808201693802682072FQzXQUR7456.png",
+    },
+    publish_at: "2023-02-12",
+  },
+  {
+    designation: "Zero to hero in uejs 3",
+    tag: "dev",
+    image_url:
+      "https://th.bing.com/th/id/R.4c3fbf54ffb437c9ccafb1a3b3ea21a9?rik=gLQ8DDLdnG%2bYSw&pid=ImgRaw&r=0",
+    lang: "vuejs",
+    link: "",
+    author: {
+      name: "Jean luc",
+      avatar:
+        "https://upperz-files.s3.af-south-1.amazonaws.com/images/tuBfGWDONL1808201693802682072FQzXQUR7456.png",
+    },
+    publish_at: "2023-05-06",
+  },
+  {
+    designation: "Learn typescript to zero",
+    tag: "dev",
+    image_url:
+      "https://th.bing.com/th/id/R.8e0650fb51b34cd4d9f90ce029d475a5?rik=Aiu1gw5iut%2fYxg&pid=ImgRaw&r=0",
+    lang: "typescript",
+    link: "",
+    author: {
+      name: "Bin Bag",
+      avatar:
+        "https://upperz-files.s3.af-south-1.amazonaws.com/images/XqGOLSBVBk1215921693803113430IICzPIx1044.png",
+    },
+    publish_at: "2023-06-22",
+  },
+  {
+    designation: "Move javascript to Typescript (in indina)",
+    tag: "dev",
+    image_url:
+      "https://miro.medium.com/v2/resize:fit:1200/1*kP86hwG0w1EeU6S9UyZGFQ.jpeg",
+    lang: "js",
+    link: "",
+    author: {
+      name: "Kahozi Kahumba",
+      avatar:
+        "https://upperz-files.s3.af-south-1.amazonaws.com/images/tuBfGWDONL1808201693802682072FQzXQUR7456.png",
+    },
+    publish_at: "2023-08-05",
+  },
+  {
+    designation: "Zero to hero in uejs 3",
+    tag: "dev",
+    image_url:
+      "https://th.bing.com/th/id/R.4c3fbf54ffb437c9ccafb1a3b3ea21a9?rik=gLQ8DDLdnG%2bYSw&pid=ImgRaw&r=0",
+    lang: "vuejs",
+    link: "",
+    author: {
+      name: "Jean luc",
+      avatar:
+        "https://upperz-files.s3.af-south-1.amazonaws.com/images/tuBfGWDONL1808201693802682072FQzXQUR7456.png",
+    },
+    publish_at: "2023-03-18",
+  },
+  {
+    designation: "Learn typescript to zero",
+    tag: "dev",
+    image_url:
+      "https://th.bing.com/th/id/R.8e0650fb51b34cd4d9f90ce029d475a5?rik=Aiu1gw5iut%2fYxg&pid=ImgRaw&r=0",
+    lang: "typescript",
+    link: "",
+    author: {
+      name: "Bin Bag",
+      avatar:
+        "https://upperz-files.s3.af-south-1.amazonaws.com/images/XqGOLSBVBk1215921693803113430IICzPIx1044.png",
+    },
+    publish_at: "2022-11-22",
+  },
+  {
+    designation: "Move javascript to Typescript (in indina)",
+    tag: "dev",
+    image_url:
+      "https://miro.medium.com/v2/resize:fit:1200/1*kP86hwG0w1EeU6S9UyZGFQ.jpeg",
+    lang: "js",
+    link: "",
+    author: {
+      name: "Kahozi Kahumba",
+      avatar:
+        "https://upperz-files.s3.af-south-1.amazonaws.com/images/tuBfGWDONL1808201693802682072FQzXQUR7456.png",
+    },
+    publish_at: "2023-07-27",
+  },
+  {
+    designation: "Zero to hero in uejs 3",
+    tag: "dev",
+    image_url:
+      "https://th.bing.com/th/id/R.4c3fbf54ffb437c9ccafb1a3b3ea21a9?rik=gLQ8DDLdnG%2bYSw&pid=ImgRaw&r=0",
+    lang: "vuejs",
+    link: "",
+    author: {
+      name: "Jean luc",
+      avatar:
+        "https://upperz-files.s3.af-south-1.amazonaws.com/images/tuBfGWDONL1808201693802682072FQzXQUR7456.png",
+    },
+    publish_at: "2023-05-06",
+  },
+  {
+    designation: "Learn typescript to zero",
+    tag: "dev",
+    image_url:
+      "https://th.bing.com/th/id/R.8e0650fb51b34cd4d9f90ce029d475a5?rik=Aiu1gw5iut%2fYxg&pid=ImgRaw&r=0",
+    lang: "typescript",
+    link: "",
+    author: {
+      name: "Bin Bag",
+      avatar:
+        "https://upperz-files.s3.af-south-1.amazonaws.com/images/XqGOLSBVBk1215921693803113430IICzPIx1044.png",
+    },
+    publish_at: "2023-06-22",
+  },
+  {
+    designation: "Zero to hero in uejs 3",
+    tag: "dev",
+    image_url:
+      "https://th.bing.com/th/id/R.4c3fbf54ffb437c9ccafb1a3b3ea21a9?rik=gLQ8DDLdnG%2bYSw&pid=ImgRaw&r=0",
+    lang: "vuejs",
+    link: "",
+    author: {
+      name: "Jean luc",
+      avatar:
+        "https://upperz-files.s3.af-south-1.amazonaws.com/images/tuBfGWDONL1808201693802682072FQzXQUR7456.png",
+    },
+    publish_at: "2023-05-06",
+  },
+  {
+    designation: "Learn typescript to zero",
+    tag: "dev",
+    image_url:
+      "https://th.bing.com/th/id/R.8e0650fb51b34cd4d9f90ce029d475a5?rik=Aiu1gw5iut%2fYxg&pid=ImgRaw&r=0",
+    lang: "typescript",
+    link: "",
+    author: {
+      name: "Bin Bag",
+      avatar:
+        "https://upperz-files.s3.af-south-1.amazonaws.com/images/XqGOLSBVBk1215921693803113430IICzPIx1044.png",
+    },
+    publish_at: "2023-06-22",
+  },
+];
+
+let _blog_lang = ref();
+let _blogs = ref<any[]>([]);
+let _filter_designation = ref<string>("Tout");
+let _blogs_length = ref<number>(0);
+
+const get_blogs = (_lang?: string) => {
+  _filter_designation.value = _lang ? _lang : "Tout";
+  _blogs.value = !_lang
+    ? _data
+    : (collect(_data).where("lang", _lang!) as unknown as any[]);
+
+  return _blogs.value as i.IBlog[];
+};
+
+onMounted(() => {
+  _blog_lang.value = collect(_data)
+    .unique("lang")
+    .pluck("lang")
+    .unique()
+    .all() as i.IBlog[];
+
+  get_blogs();
+
+  _blogs_length.value = _blogs.value.length;
+});
 </script>
 
 <style lang="scss" scoped>
@@ -94,7 +309,8 @@ const __cat = "Nuxtjs";
   display: flex;
   flex-direction: column;
   padding: 0 0.5rem;
-
+  margin-bottom: 5rem;
+  position: relative;
   .container__top {
     min-height: 85vh;
     display: flex;
@@ -118,11 +334,11 @@ const __cat = "Nuxtjs";
       }
 
       .top__bt {
-        font-size: 14px;
-        width: 30%;
+        font-size: 15px;
+        width: 32%;
 
         .bt__icon {
-          font-size: 22px;
+          font-size: 25px;
         }
       }
 
@@ -153,13 +369,11 @@ const __cat = "Nuxtjs";
         width: 65%;
         .r__one {
           width: 100%;
-          // background-color: blue;
           border-radius: 0 20px 20px 20px;
         }
 
         .__top {
           height: 15%;
-          // background-color: bisque;
           border-radius: 0 0 20px 0;
         }
 
@@ -301,11 +515,105 @@ const __cat = "Nuxtjs";
   .container__botton {
     display: flex;
     width: 100%;
-    gap: 40px;
-    min-height: 50vh;
+    min-height: 100vh;
     margin-top: 6rem;
+    gap: 10px;
+    .cb__title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .cb__left {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
 
-    background-color: red;
+      .cb__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 65vh;
+        position: sticky;
+        top: 12vh;
+        transition: 0.3s;
+
+        .cb__title {
+          margin-bottom: 2.5rem;
+        }
+
+        .card__label {
+          width: 100%;
+          min-height: 75%;
+
+          .lang__label {
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding: 8px 15px;
+            background-color: #0000001a;
+            border-radius: 9px;
+            font-size: 14px;
+            cursor: pointer;
+          }
+
+          .lang__label:hover {
+            background-color: black;
+            color: #ffffff;
+            transition: 0.3s;
+            cursor: pointer;
+          }
+        }
+
+        .cb__proposal {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .proposal__title {
+            font-weight: 700;
+          }
+
+          .proposal__description {
+            font-size: 13px;
+          }
+          .proposal__bt {
+            width: 70%;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    .cb__right {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+
+      .cb__designation {
+        color: #e39b55;
+        text-transform: capitalize;
+      }
+
+      .card__blog {
+        width: 100%;
+        min-height: auto;
+        // background-color: red;
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        .__card {
+          width: 32.7%;
+          height: 420px;
+          margin: 0;
+          margin-bottom: 15px;
+          background-color: #00000006;
+          border-radius: 10px;
+        }
+      }
+    }
   }
 }
 </style>

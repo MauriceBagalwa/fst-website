@@ -196,7 +196,7 @@ header {
       .header__menu {
         display: flex;
         list-style-type: none;
-        font-size: 0.9vw;
+        font-size: 0.8rem;
         font-weight: 700;
         justify-content: center;
         align-items: center;

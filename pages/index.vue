@@ -18,8 +18,8 @@
   position: relative;
   background-image: url("/images/bg-6.png");
 
-  .background {
-    position: absolute;
-  }
+  // .background {
+  //   position: absolute;
+  // }
 }
 </style>

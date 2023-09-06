@@ -16,56 +16,58 @@
 
 <script lang="ts" setup>
 // import i from "interface";
+import bd from "../../src/utils/db.json";
 
-const _title = "Notre process et notre expertise";
+const _title = "Notre process et notre expertise, services";
 const _label = "EXTPERTISE";
 const _description =
   "Notre expérience, nous a permis de créer notre propre méthode de développement afin d’augmenter les interactions humaines, la rapidité des livrables et de prendre en compte les évolutions et les retours utilisateurs.";
 
-const _data = [
-  {
-    title: "Stratégie",
-    description:
-      "Pour commencer, il est important pour nous de bien comprendre vos enjeux, vos problématiques et vos objectifs.",
-    image_ul:
-      "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574faa24f22711fe7aa43_icon_strategie.png",
-  },
-  {
-    title: "UX Research",
-    description:
-      "Maintenant que la stratégie est claire, vous travaillerez en étroite collaboration avec notre équipe design. Des interviews seront réalisés avec les utilisateurs finaux pour identifier le comportement",
-    image_ul:
-      "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574fc7557f2d555a52bc7_icon_ux_research.png",
-  },
-  {
-    title: "UI Design",
-    description:
-      "Dès la création du parcours utilisateur et des interfaces agréables, pratiques et faciles à prendre en main. Nos designer passent à la partie UI design",
-    image_ul:
-      "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574fa5f84c763e90856d3_icon_ui_design.png",
-  },
-  {
-    title: "Développement",
-    description:
-      "Une fois les interfaces finalisées, nous lançons enfin notre équipe de développeur passionnée, développer votre application. Grâce à notre méthodologie Agile, vous recevez des versions testables toutes les semaines, ce qui vous laisse tout le temps",
-    image_ul:
-      "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574f9b3a3bba4c1d34f45_icon_developpement.png",
-  },
-  {
-    title: "Tests",
-    description:
-      "L'une des étapes clés à ne pas négliger pour avoir une application de qualité, ce sont bien évidement les tests.",
-    image_ul:
-      "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574fa5f84c763e90856d3_icon_ui_design.png",
-  },
-  {
-    title: "Lancement",
-    description:
-      "Vient l’heure du lancement en production, une étape que vous attendez avec impatience. Bien entendu, notre collaboration ne se termine pas là ! Nous continuerons à vous accompagner durant une période",
-    image_ul:
-      "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574f964d8fe480aebd068_icon_lancement.png",
-  },
-];
+const _data = bd.services;
+// [
+//   {
+//     title: "Stratégie",
+//     description:
+//       "Pour commencer, il est important pour nous de bien comprendre vos enjeux, vos problématiques et vos objectifs.",
+//     image_ul:
+//       "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574faa24f22711fe7aa43_icon_strategie.png",
+//   },
+//   {
+//     title: "UX Research",
+//     description:
+//       "Maintenant que la stratégie est claire, vous travaillerez en étroite collaboration avec notre équipe design. Des interviews seront réalisés avec les utilisateurs finaux pour identifier le comportement",
+//     image_ul:
+//       "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574fc7557f2d555a52bc7_icon_ux_research.png",
+//   },
+//   {
+//     title: "UI Design",
+//     description:
+//       "Dès la création du parcours utilisateur et des interfaces agréables, pratiques et faciles à prendre en main. Nos designer passent à la partie UI design",
+//     image_ul:
+//       "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574fa5f84c763e90856d3_icon_ui_design.png",
+//   },
+//   {
+//     title: "Développement",
+//     description:
+//       "Une fois les interfaces finalisées, nous lançons enfin notre équipe de développeur passionnée, développer votre application. Grâce à notre méthodologie Agile, vous recevez des versions testables toutes les semaines, ce qui vous laisse tout le temps",
+//     image_ul:
+//       "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574f9b3a3bba4c1d34f45_icon_developpement.png",
+//   },
+//   {
+//     title: "Tests",
+//     description:
+//       "L'une des étapes clés à ne pas négliger pour avoir une application de qualité, ce sont bien évidement les tests.",
+//     image_ul:
+//       "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574fa5f84c763e90856d3_icon_ui_design.png",
+//   },
+//   {
+//     title: "Lancement",
+//     description:
+//       "Vient l’heure du lancement en production, une étape que vous attendez avec impatience. Bien entendu, notre collaboration ne se termine pas là ! Nous continuerons à vous accompagner durant une période",
+//     image_ul:
+//       "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/625574f964d8fe480aebd068_icon_lancement.png",
+//   },
+// ];
 </script>
 
 <style lang="scss" scoped>
@@ -79,23 +81,23 @@ const _data = [
 
   // margin-bottom: 3rem;
 
-  // .container__top::before {
-  //   content: "# E X T P E R T I S E";
-  //   position: absolute;
-  //   font-size: 11px;
-  //   margin-top: -60px;
-  //   background: #e39b55;
-  //   border-radius: 3px;
-  //   padding: 8px 20px;
-  //   color: #ffffff;
-  //   opacity: 0.9;
-  //   font-weight: 800;
-  //   margin-left: 42%;
-  // }
+  .container__top::before {
+    content: "Les services que nous offrons";
+    font-weight: 700;
+    position: absolute;
+    font-size: 14px;
+    margin-top: -60px;
+    border: 1px solid rgba(176, 176, 176, 0.547);
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: rgb(85, 85, 85);
+    opacity: 0.9;
+  }
 
   .container__top {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 25px;
     text-align: center;
     margin-bottom: 0;
@@ -146,38 +148,27 @@ const _data = [
 }
 
 @media all and (min-width: 1024px) {
-  .section_container::before {
-    content: "# E X T P E R T I S E";
-    position: absolute;
-    font-size: 11px;
-    margin-top: -75px;
-    background: #e39b55;
-    margin-left: 42%;
-    border-radius: 3px;
-    padding: 8px 20px;
-    color: #ffffff;
-    opacity: 0.9;
-    font-weight: 800;
-  }
-
   .section_container {
-    // background-color: aqua;
-    // margin-top: 0;
     margin-top: 4%;
+
+    .container__top::before {
+      left: 7.6%;
+    }
     .container__top {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      flex-direction: row;
+      text-align: left;
+
       // background-color: red;
+
       height: 4vh;
       .top__title {
         font-size: 30px;
-        inline-size: 75%;
+        inline-size: 35%;
       }
 
       .top__description {
-        inline-size: 70%;
+        inline-size: 50%;
       }
     }
 
