@@ -13,11 +13,10 @@
     </p>
 
     <div class="hero__button">
-      <button>
+      <NuxtLink class="hero__button" to="#_iabout">
         Apprendre plus sur nous
-        <div class="btn__icon"></div>
         <Icon name="uil:arrow-down" class="hbutton__icon" />
-      </button>
+      </NuxtLink>
     </div>
 
     <!-- <HomePartners class="partner" /> -->
@@ -49,18 +48,18 @@ onMounted(() => {});
     inline-size: 95%;
     display: flex;
     justify-content: center;
-    // align-items: center;
   }
 
   .hero__title::before {
-    content: "# S T A R T - U P";
+    content: "Made by Developers, for Developers";
     position: absolute;
     font-size: 11px;
-    margin-top: -30px;
-    background: #e39b55;
-    border-radius: 3px;
-    padding: 4px 20px;
-    color: #ffffff;
+    margin-top: -6%;
+    border: 1px solid rgba(176, 176, 176, 0.547);
+    border-radius: 8px;
+    padding: 7px 20px;
+    color: rgb(85, 85, 85
+    );
     opacity: 0.9;
   }
 
@@ -73,7 +72,8 @@ onMounted(() => {});
   }
 
   .hero__button {
-    button {
+    .hero__button {
+      text-decoration: none;
       font-size: 16.5px;
       font-weight: 700;
       background: none;
@@ -82,6 +82,7 @@ onMounted(() => {});
       align-items: center;
       gap: 5px;
       //       position: relative;
+      color: black;
       padding: 0 14px;
       cursor: pointer;
     }
@@ -140,7 +141,7 @@ onMounted(() => {});
 @media all and (min-width: 1024px) {
   .section__parent {
     // background-color: blue;
-    min-height: 70vh;
+    min-height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -154,7 +155,7 @@ onMounted(() => {});
     // background-color: red;
 
     .hero__title {
-      font-size: 3.7rem;
+      font-size: 3rem;
       inline-size: 80%;
     }
 

@@ -37,10 +37,11 @@ const _data: string[] = [
 
 <style lang="scss" scoped>
 .section_container {
-  min-height: 30vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
   // gap: 1rem;
   // align-items: center;
   // text-align: center;
@@ -87,7 +88,7 @@ const _data: string[] = [
     margin: 0;
     padding: 0;
     gap: 2rem;
-    margin-bottom: 5rem;
+    margin-top: 10%;
 
     .container__top {
       display: flex;

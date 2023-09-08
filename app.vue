@@ -6,18 +6,18 @@
 </template>
 
 <script lang="ts">
-import { NuxtPage, NuxtWelcome } from ".nuxt/components";
+import { NuxtPage } from ".nuxt/components";
 </script>
 <style>
-.body__children {
-  margin: 0 auto;
+/* .body__children {
+  margin: 0;
   padding: 0;
   max-width: 1450px;
-}
+} */
 
-@media all and (min-width: 1024px) {
+/* @media all and (min-width: 1024px) {
   body {
     padding: 0 4rem;
   }
-}
+} */
 </style>

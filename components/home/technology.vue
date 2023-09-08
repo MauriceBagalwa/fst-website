@@ -170,7 +170,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .section_container {
   // background-color: red;
-  min-height: 50vh;
+  min-height: 58vh;
   position: relative;
   padding: 0 1rem;
   display: flex;
@@ -178,6 +178,7 @@ onMounted(() => {
   text-align: center;
   align-items: center;
   gap: 1rem;
+  margin-top: 10%;
 
   .container__title {
     font-size: 25px;
@@ -255,7 +256,7 @@ onMounted(() => {
 
 @media all and (min-width: 1024px) {
   .section_container {
-    margin-top: 12%;
+    // margin-top: 12%;
 
     .container__title {
       font-weight: 800;

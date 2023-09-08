@@ -1,5 +1,5 @@
 <template>
-  <div class="section__about section__padding">
+  <div class="section__about section__padding" id="_iabout">
     <div class="about__image">
       <img
         src="https://www.notion.so/cdn-cgi/image/format=webp,width=1080,quality=80/front-static/pages/home/home-hero.png"
@@ -15,11 +15,13 @@
           placeat aliquam velit, distinctio, odio veritatis aperiam fuga vero,
           dolorum illum delectus beatae.
         </p>
-        <button class="left__button">
+        <NuxtLink class="style__button left__button" to="/about_us">
           {{ _bt_designation }}
+          <Icon name="uil:arrow-up-right" class="bt__icon" />
           <!-- <Icon name="uil:arrow-down" class="left__bt__icon" /> -->
-        </button>
-        <img src="/images/_smile.png" alt="about_us" class="left_img" />
+        </NuxtLink>
+        <!-- <img src="/images/_smile.png" alt="about_us" class="left_img" /> -->
+        <img src="/images/_nabout_us.png" alt="about_us" class="left_img_2" />
       </div>
 
       <div class="container__right">
@@ -177,7 +179,6 @@ const _bt_designation = "En savoir plus";
         font-size: 17px;
         letter-spacing: 1px;
         line-height: 25px;
-        // inline-size: 90%;
         color: rgba(0, 0, 0, 0.653);
         text-align: center;
       }
@@ -210,6 +211,20 @@ const _bt_designation = "En savoir plus";
       }
     }
   }
+
+  .card__container::before {
+    content: "Qui nous sommes !";
+    font-weight: 600;
+    position: absolute;
+    font-size: 11px;
+    margin-top: -60px;
+    border: 1px solid rgba(176, 176, 176, 0.547);
+    border-radius: 4px;
+    padding: 6px 16px;
+    color: rgb(85, 85, 85);
+    opacity: 0.9;
+    opacity: 0.4;
+  }
 }
 
 @media all and (min-width: 768px) {
@@ -220,8 +235,8 @@ const _bt_designation = "En savoir plus";
 
 @media all and (min-width: 1024px) {
   .section__about {
-    gap: 10px;
-    // background-color: red;
+    gap: 5px;
+    margin-bottom: 10%;
 
     .about__image {
       img {
@@ -232,12 +247,13 @@ const _bt_designation = "En savoir plus";
     .card__container {
       display: flex;
       margin-top: 120px;
-      // display: ;
+      // background-color: red;
       .container_left {
         display: flex;
         flex-direction: column;
         gap: 25px;
         width: 60%;
+        // background-color: blue;
 
         .left__label {
           font-size: 30px;
@@ -273,15 +289,26 @@ const _bt_designation = "En savoir plus";
           top: 40%;
           transform: rotate(-22deg);
         }
+
+        .left_img_2 {
+          display: block;
+          position: absolute;
+          width: 60%;
+          object-fit: contain;
+          right: 18%;
+          top: 30%;
+          // transform: rotate(-22deg);
+        }
       }
 
       .container__right {
         display: flex;
         flex-wrap: wrap;
-        width: 60%;
+        max-width: 55%;
+        // background-color: aquamarine;
 
         .card {
-          width: 42%;
+          width: 45%;
           display: flex;
           flex-direction: column;
           margin-bottom: 3%;
@@ -298,30 +325,17 @@ const _bt_designation = "En savoir plus";
           }
 
           .content__title {
-            font-size: 20px;
+            font-size: 15px;
           }
 
           .card__description {
-            font-size: 18px;
+            font-size: 14px;
             inline-size: 100%;
           }
         }
       }
     }
 
-    .card__container::before {
-      content: "# Q U I - N O U S - S O M M E S";
-      position: absolute;
-      font-size: 11px;
-      margin-top: -80px;
-      background: #e39b55;
-      border-radius: 3px;
-      padding: 8px 20px;
-      color: #ffffff;
-      opacity: 0.9;
-      font-weight: 800;
-      margin-left: 42%;
-    }
     .container__button {
       width: 100%;
       min-height: 40vh;
@@ -333,7 +347,7 @@ const _bt_designation = "En savoir plus";
       .button__title {
         font-weight: 800;
         font-size: 22px;
-        inline-size: 20%;
+        inline-size: 25%;
         margin-right: 5%;
         text-align: center;
       }

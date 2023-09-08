@@ -17,7 +17,7 @@ const _description =
 
 <style lang="scss" scoped>
 .section_container {
-  height: 50vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -28,8 +28,8 @@ const _description =
     // content: "";
     position: absolute;
     background: #e39b55;
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     z-index: 0;
     border-radius: 50%;
     left: 30%;
@@ -41,7 +41,7 @@ const _description =
     // background-color: red;
     .container__title {
       font-size: 3.5rem;
-      inline-size: 40%;
+      inline-size: 45%;
       text-align: left;
       font-weight: 700;
       z-index: 2;
