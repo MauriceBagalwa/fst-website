@@ -1,15 +1,13 @@
 <template>
   <div class="__home2">
-    <HomeHero />
+    <!-- <HomeHero />
     <HomeAbout />
     <HomeExpertise />
     <HomeRealisation :data="{ show_title: true }" />
     <HomeWhyUs />
     <HomeCustomer />
-    <!-- <HomeComment /> -->
-
     <HomeTechnology />
-    <CardsContact />
+    <CardsContact /> -->
   </div>
 </template>
 

@@ -23,8 +23,7 @@
           Merci à l’équipe Apparence ! Le travail réalisé sur la maquette de
           notre application mobile s’est déroulé selon nos attentes, et avec un
           bon niveau d’accomplissement. Cet outil que nous avons pu construire
-          avec vous nous permettra de donner de la visibilité à nos clients sur
-          notre vision..
+          avec vous nous permettra de donner de la visibilité.
         </p>
       </div>
     </div>
@@ -96,22 +95,24 @@ const _description =
     .container__buttom {
       display: flex;
       position: relative;
-      gap: 30px;
+      gap: 10px;
+      // background-color: red;
       .bt__left {
         width: 250px;
         position: relative;
         img {
-          width: 100%;
+          width: 80%;
           border-radius: 10px;
         }
       }
 
       .bt__right {
-        width: 50%;
+        width: 80%;
         display: flex;
         flex-direction: column;
         gap: 15px;
         padding-left: 20px;
+        // background-color: blue;
         // margin-right: 50px;
 
         .bt__personne {
@@ -127,9 +128,9 @@ const _description =
         }
 
         .bt__comment {
-          inline-size: 90%;
+          inline-size: 80%;
           line-height: 29px;
-          font-size: 17px;
+          font-size: 15px;
         }
         // .
       }
@@ -137,10 +138,10 @@ const _description =
       .bt__right::before {
         content: "";
         position: absolute;
-        width: 3px;
-        height: 90%;
+        width: 2px;
+        height: 70%;
         background: #737b7d;
-        left: 23%;
+        left: 25%;
         border-radius: 5px;
         // margin-right: px;
       }

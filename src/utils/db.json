@@ -5,10 +5,12 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia vitae a ducimus soluta id provident aliquid nisi eaque numquam quae!",
       "genres": ["Education", "web"],
       "image_ul": "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/624c5e49167a57162898fbbf_image_thumbnail_application_mobile_we_are_caring.png",
-      "bg_color": "#2b279eb2"
+      "bg_color": "#698C7A"
     },
     {
       "title": "Maajabu Cab",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia vitae a ducimus soluta id provident aliquid nisi eaque numquam quae!",
+      "genres": ["Education", "web"],
       "image_ul": "https://uploads-ssl.webflow.com/62286107f2783186ccd3f75b/624c5d9f40ffde160d61681f_image_thumbnail_application_mobile_monsuividiet-p-800.png",
       "bg_color": "#e09a3d8e"
     },

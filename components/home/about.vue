@@ -15,10 +15,11 @@
           placeat aliquam velit, distinctio, odio veritatis aperiam fuga vero,
           dolorum illum delectus beatae.
         </p>
-        <button class="left__button">
+        <NuxtLink class="style__button left__button" to="/about_us">
           {{ _bt_designation }}
+          <Icon name="uil:arrow-up-right" class="bt__icon" />
           <!-- <Icon name="uil:arrow-down" class="left__bt__icon" /> -->
-        </button>
+        </NuxtLink>
         <!-- <img src="/images/_smile.png" alt="about_us" class="left_img" /> -->
         <img src="/images/_nabout_us.png" alt="about_us" class="left_img_2" />
       </div>
@@ -222,7 +223,7 @@ const _bt_designation = "En savoir plus";
     padding: 6px 16px;
     color: rgb(85, 85, 85);
     opacity: 0.9;
-    opacity: .4;
+    opacity: 0.4;
   }
 }
 
@@ -248,7 +249,6 @@ const _bt_designation = "En savoir plus";
       margin-top: 120px;
       // background-color: red;
       .container_left {
-
         display: flex;
         flex-direction: column;
         gap: 25px;
@@ -347,7 +347,7 @@ const _bt_designation = "En savoir plus";
       .button__title {
         font-weight: 800;
         font-size: 22px;
-        inline-size: 20%;
+        inline-size: 25%;
         margin-right: 5%;
         text-align: center;
       }

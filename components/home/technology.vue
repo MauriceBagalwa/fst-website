@@ -178,6 +178,7 @@ onMounted(() => {
   text-align: center;
   align-items: center;
   gap: 1rem;
+  margin-top: 10%;
 
   .container__title {
     font-size: 25px;

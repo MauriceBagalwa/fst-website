@@ -39,13 +39,14 @@ const props = defineProps<{ data: i.IServiceCard }>();
 
   .card__icon {
     height: 30%;
-    background-color: blue;
+    background-color: #E0FFFF;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .__icon {
       font-size: 30px;
+      color: #99FFFF;
     }
   }
   // padding: 2rem 1.2rem;

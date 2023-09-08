@@ -597,16 +597,17 @@ onMounted(() => {
       .card__blog {
         width: 100%;
         min-height: auto;
+        // height: 700px;
         // background-color: red;
         margin-top: 2.5rem;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 15px;
         align-items: center;
         .__card {
-          width: 32.7%;
-          height: 420px;
+          width: 32%;
+          height: 320px;
           margin: 0;
           margin-bottom: 15px;
           background-color: #00000006;

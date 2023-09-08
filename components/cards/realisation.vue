@@ -26,8 +26,13 @@ const props = defineProps<{ data: i.IRealisationCard }>();
 .card__container {
   width: 100%;
   min-height: 450px;
-  // background-color: #e09a3d8e;
   background-color: v-bind("props.data.bg_color");
+  background: linear-gradient(
+    90deg,
+    v-bind("props.data.bg_color") 0%,
+    v-bind("props.data.bg_color") 80.5%,
+    rgba(255, 255, 255, 1) 110%
+  );
   display: flex;
   flex-direction: column;
   border-radius: 7px;

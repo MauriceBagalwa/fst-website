@@ -1,9 +1,11 @@
 <template>
   <header>
-    <div class="header__logo">
+    <div class="header__element header__left">
       <img src="/logo_fst.png" alt="enterprise logo" />
+      <!-- <p>Logo</p> -->
     </div>
-    <nav>
+
+    <nav class="header__element">
       <ul class="header__menu">
         <NuxtLink to="/" class="__menu">Acceuil</NuxtLink>
         <NuxtLink to="/about_us" class="__menu">Qui nous sommes</NuxtLink>
@@ -13,16 +15,18 @@
       </ul>
     </nav>
 
-    <div class="header__nav_action">
-      <button>Contactez-nous</button>
-    </div>
+    <div class="header__element header__right">
+      <div class="header__nav_action">
+        <button>Contactez-nous</button>
+      </div>
 
-    <div
-      class="toogle__menu"
-      @click="toogle_menu"
-      :class="{ active: isActive }"
-    >
-      <div class="tg-menu__burger"></div>
+      <div
+        class="toogle__menu"
+        @click="toogle_menu"
+        :class="{ active: isActive }"
+      >
+        <div class="tg-menu__burger"></div>
+      </div>
     </div>
   </header>
   <slot />
@@ -41,86 +45,121 @@ header {
   position: relative;
   position: sticky;
   top: 0;
-  height: 5rem;
+  height: 4rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 50;
-  padding: 0 0.6rem;
-
   background-color: whitesmoke;
-  // background-color: red;
-  .header__logo img {
-    width: 160px;
-    //   max-width: 200px;
-    //   min-width: 180;
-    //   z-index: 100;
+  padding: 0 1rem;
+  padding-top: 2rem;
+  z-index: 5000;
+
+  .header__element:first-child {
+    margin-right: auto;
   }
+
+  .header__element:last-child {
+    margin-left: auto;
+  }
+
+  .header__left {
+    img {
+      width: 140px;
+    }
+  }
+
+  .header__right {
+    display: flex;
+    align-items: center;
+
+    .toogle__menu {
+      position: relative;
+      width: 48px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      background: rgba(233, 233, 233, 0.257);
+      border-radius: 14px;
+
+      .tg-menu__burger {
+        width: 30px;
+        height: 4px;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+        background-color: black;
+        position: absolute;
+        right: 10px;
+      }
+
+      .tg-menu__burger::before,
+      .tg-menu__burger::after {
+        content: "";
+        position: absolute;
+        background: black;
+        border-radius: 5px;
+        right: 0px;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .tg-menu__burger::before {
+        width: 19px;
+        height: 4px;
+        transform: translateY(-9.5px);
+      }
+
+      .tg-menu__burger::after {
+        width: 11px;
+        height: 4px;
+        transform: translateY(9.5px);
+      }
+    }
+
+    .toogle__menu.active .tg-menu__burger {
+      transform: translateX(-50px);
+      background: transparent;
+    }
+
+    .toogle__menu.active .tg-menu__burger::before {
+      width: 30px;
+      transform: rotate(45deg) translate(35px, -35px);
+    }
+
+    .toogle__menu.active .tg-menu__burger::after {
+      transform: rotate(-45deg) translate(35px, 35px);
+      width: 30px;
+    }
+  }
+}
+
+header {
+  // .header__logo {
+  //   height: 80%;
+  //   width: 20%;
+  //   background-color: red;
+  //   img {
+  //     width: 10px;
+  //     //   max-width: 200px;
+  //     //   min-width: 180;
+  //     //   z-index: 100;
+  //   }
+  // }
 
   .header__nav_action,
   nav {
     display: none;
   }
 
-  .toogle__menu {
-    position: relative;
-    width: 48px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background: rgba(233, 233, 233, 0.257);
-    border-radius: 14px;
-
-    .tg-menu__burger {
-      width: 30px;
-      height: 4px;
-      border-radius: 5px;
-      transition: all 0.5s ease-in-out;
-      background-color: black;
-      position: absolute;
-      right: 10px;
-    }
-    .tg-menu__burger::before,
-    .tg-menu__burger::after {
-      content: "";
-      position: absolute;
-      background: black;
-      border-radius: 5px;
-      right: 0px;
-      transition: all 0.5s ease-in-out;
-    }
-
-    .tg-menu__burger::before {
-      width: 19px;
-      height: 4px;
-      transform: translateY(-9.5px);
-    }
-
-    .tg-menu__burger::after {
-      width: 11px;
-      height: 4px;
-      transform: translateY(9.5px);
-    }
-  }
-
-  .toogle__menu.active .tg-menu__burger {
-    transform: translateX(-50px);
-    background: transparent;
-  }
-
-  .toogle__menu.active .tg-menu__burger::before {
-    width: 30px;
-    transform: rotate(45deg) translate(35px, -35px);
-  }
-
-  .toogle__menu.active .tg-menu__burger::after {
-    transform: rotate(-45deg) translate(35px, 35px);
-    width: 30px;
-  }
-
   @media all and (min-width: 768px) {
+    .header__right {
+      // width: 5%;
+      // background-color: red;
+      .header__nav_action {
+        display: flex;
+        margin-right: 20px;
+      }
+    }
+
     //   .background {
     //     // height: 75%;
     //     width: 100%;
@@ -186,32 +225,40 @@ header {
     nav {
       display: block;
     }
-    nav {
-      width: 70%;
-      .header__menu,
-      .header__nav_action {
-        display: flex;
-      }
 
-      .header__menu {
-        display: flex;
-        list-style-type: none;
-        font-size: 0.8rem;
-        font-weight: 700;
-        justify-content: center;
-        align-items: center;
-        gap: 6%;
-
-        .__menu {
-          text-decoration: none;
-          color: rgba(0, 0, 0, 0.85);
-        }
-
-        .__menu:hover {
-          color: rgba(0, 0, 0, 0.65);
-        }
+    .header__left {
+      // background-color: red;
+      width: 30%;
+      img {
+        width: 35%;
       }
     }
+    //   nav {
+    //     // width: 70%;
+    //     .header__menu,
+    //     .header__nav_action {
+    //       display: flex;
+    //     }
+
+    //     .header__menu {
+    //       display: flex;
+    //       list-style-type: none;
+    //       font-size: 0.8rem;
+    //       font-weight: 700;
+    //       justify-content: center;
+    //       align-items: center;
+    //       gap: 6%;
+
+    //       .__menu {
+    //         text-decoration: none;
+    //         color: rgba(0, 0, 0, 0.85);
+    //       }
+
+    //       .__menu:hover {
+    //         color: rgba(0, 0, 0, 0.65);
+    //       }
+    //     }
+    //   }
   }
 }
 </style>

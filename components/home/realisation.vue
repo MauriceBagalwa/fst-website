@@ -49,7 +49,7 @@ const _data: i.IRealisationCard[] = bd.portofolio;
   }
 
   .caontainer__button {
-    width: 18%;
+    width: 22%;
     padding: 15px 25px;
     // font-weight: bold;
     font-size: 16px;
